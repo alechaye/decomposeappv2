@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const DescompositionsDashboard = ({ data, word, foundMessage, columns }) => {
+const DescompositionsDashboard = ({ data, word, foundMessage }) => {
   return (
     <>
       <div>
@@ -17,7 +17,7 @@ const DescompositionsDashboard = ({ data, word, foundMessage, columns }) => {
             "Cargando..."
           )
         ) : (
-          <ol style={{columns: columns}}>
+          <ol>
             {data.map((perm, i) => (
               <li key={i}>{perm}</li>
             ))}

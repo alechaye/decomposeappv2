@@ -4,7 +4,6 @@ import "./App.css";
 import Header from "./components/Header.react";
 import DescompositionsDashboard from "./components/DescompositionsDashboard.react";
 import CharacteristicsDashboard from "./components/CharacteristicsDashboard.react";
-import SideBar from "./components/SideBar.react";
 
 function App() {
 
@@ -13,7 +12,6 @@ function App() {
   const [data, setData] = useState("");
   const [language, setLanguage] = useState("");
   const [foundMessage, setFoundMessage] = useState("");
-  const [columns, setColumns] = useState(3);
 
   const handleClick = (language) => {
     if (word.length <= 10) {
@@ -22,8 +20,6 @@ function App() {
       let word_sorted = [...word];
       word_sorted.sort();
       word_sorted = word_sorted.join("");
-      console.log(word_sorted);
-      console.log(`/api?word=${word_sorted.toLowerCase()}&language=${language}`);
       fetch(`/api?word=${word_sorted.toLowerCase()}&language=${language}`, {
         headers : { 
           'Content-Type': 'application/json',
@@ -32,7 +28,6 @@ function App() {
          .then(async response => {
           try {
            const data = await response.json()
-           console.log('response data?', data)
            setData(data.message);
            setFoundMessage(data.foundMessage)  
          } catch(error) {
@@ -48,7 +43,6 @@ function App() {
   
   return (
     <div className="App">
-      <SideBar setColumns={setColumns} columns={columns}/>
       <Header />
       <input className="word-input"
         value={word}
@@ -76,7 +70,7 @@ function App() {
         </button>
       </div>
       <CharacteristicsDashboard word={word} />
-      <DescompositionsDashboard data={data} word={word} foundMessage={foundMessage} columns={columns} />
+      <DescompositionsDashboard data={data} word={word} foundMessage={foundMessage} />
     </div>
   );
 }
