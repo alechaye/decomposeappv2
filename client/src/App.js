@@ -129,8 +129,7 @@ function App() {
         word={word}
         foundMessage={foundMessage}
       />
-      <div className="p8" />
-      <div className="p8" />
+      <div className="p64" />
        <Footer />
     </div>
   );
