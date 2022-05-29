@@ -1,46 +1,88 @@
 .App {
   text-align: center;
-  width: 60%;
   align-items: center;
   margin: 0px auto;
 }
 
-h1 {
-  color: orange;
+.p4 {
+  padding-top: 4px;
 }
 
-h2 {
-  color: gray;
-  font-size: 1em;
+.p8 {
+  padding-top: 8px;
 }
 
-.word-input {
-  width: 50%;
-  height: 40px;
-  text-align: center;
+.p16 {
+  padding-top: 64px;
 }
 
-button {
-  background-color:gray;
+.bp {
+  padding-left: 24px;
+}
+
+
+.buttonLanguage {
+  background-color: #7e57c2;
   color: white;
-  width: 25%;
+  width: 200px;
   height: 40px;
-  margin: 2.5px;
-  margin-top: 5px;
   border-radius: 5px;
 }
 
-button:hover {
-  background-color: orange;
+.buttonLanguage:hover {
+  background-color: #311b92;
 }
 
-ol {
-  columns: 6;
-  text-align: left;
-  padding-left: 20%;
-  align-items: center;
+.buttonTry {
+  background-color: white;
+  color: #7e57c2;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border-color: #7e57c2;
+}
+.buttonTry:hover{
+  background-color:  #7e57c2;
+  color: #d1c4e9;
+}
+
+.body {
+  color: #7e57c2;
+  max-width: 400px;
+  font-style: italic;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wordListWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+.wordList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+
+.word {
+  width: 100px;
+  color: #311b92;
 }
 
 .selected {
-  background-color: orange;
+  background-color: #311b92;
+}
+
+.footer{
+  border-top: solid white;
+  border-width: 4px;
+  padding: 4px;
+  background-color: #7e57c2;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #d1c4e9;
 }

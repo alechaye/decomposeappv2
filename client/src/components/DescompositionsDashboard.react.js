@@ -1,27 +1,31 @@
 import React from "react";
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 const DescompositionsDashboard = ({ data, word, foundMessage }) => {
   return (
     <>
-      <div>
-        {foundMessage
-          ? foundMessage
-          : `Presiona un botón y obtén sus descomposiciones válidas`}
+      <div className="body">
+        {foundMessage ? foundMessage : ``}
       </div>
+      <div className="p8" />
       <div>
         {!data ? (
           !word ? (
             ""
           ) : (
-            "Cargando..."
+            <CircularProgress color="primary" />
           )
         ) : (
-          <ol>
-            {data.map((perm, i) => (
-              <li key={i}>{perm}</li>
-            ))}
-          </ol>
+          <div className="wordListWrapper">
+            <div className="wordList">
+              {data.map((perm, i) => (
+                <div key={i} className="word">
+                  {`${i+1}. ${perm}`}
+                </div>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </>

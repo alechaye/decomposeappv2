@@ -12,12 +12,12 @@ const CharacteristicsDashboard = ({word}) => {
 }, [word]);
 
   return (
-    <div>
+    <div className='body'>
     {word
-      ? `${
-          word[0].toUpperCase() + word.slice(1).toLowerCase()
-        } tiene ${word.length} letras y ${numPerm} descomposiciones posibles`
-      : ""}
+      && `${
+          word.toUpperCase()
+        } has ${numPerm} decompositions in total`
+      }
   </div>
   )
 }

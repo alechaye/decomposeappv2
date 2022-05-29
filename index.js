@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 
 const languages_in_spanish = {
-  spanish: "español",
-  english: "inglés",
+  spanish: "SPANISH",
+  english: "ENGLISH",
 };
 
 app.use(express.static(path.resolve(__dirname, "client/build")));
@@ -24,8 +24,8 @@ app.get("/api", (req, res) => {
   res.json({
     message: [...message],
     foundMessage: !message.size
-      ? `Ninguna palabra fue encontrada`
-      : `Sus descomposiciones válidas en ${languages_in_spanish[language]} son:`,
+      ? `Any word was found`
+      : `Its valid in ${languages_in_spanish[language]} are:`,
   });
 });
 
