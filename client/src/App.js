@@ -9,21 +9,18 @@ import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Typography from "@mui/material/Typography";
 import { deepPurple } from "@mui/material/colors";
-import Link from "@mui/material/Link";
 
 const primary = deepPurple[900];
 
 function App() {
   const CHARACTER_LIMIT = 9;
-  // TODO: localAppData / serverAppData / toggleData
   const [word, setWord] = useState("");
   const [data, setData] = useState("");
-  const [language, setLanguage] = useState("");
   const [foundMessage, setFoundMessage] = useState("");
   const [showHeader, setShowHeader] = useState(true);
 
   const handleClick = (language) => {
-    setLanguage(language);
+    if (word.length < 10) {
     setData("");
     let word_sorted = [...word];
     word_sorted.sort();
@@ -43,7 +40,10 @@ function App() {
         console.log("Error happened here!");
         console.error(error);
       }
-    });
+    })} else {
+      alert('The word should have a maximum of 9 characters');
+      setWord("")
+    };
   };
 
   return (
@@ -72,7 +72,6 @@ function App() {
             value={word}
             onChange={(e) => {
               setWord(e.target.value);
-              setLanguage("");
               setFoundMessage("");
               setData([]);
             }}
@@ -117,7 +116,6 @@ function App() {
               setFoundMessage("");
               setData([]);
               setWord("");
-              setLanguage("");
             }}
           >
             TRY ANOTHER WORD
