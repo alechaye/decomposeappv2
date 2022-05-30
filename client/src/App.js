@@ -59,7 +59,6 @@ function App() {
             Decompose
           </Typography>
           <div className="p8" />
-
           <div className="body">
             Know all the valid words that can be made from the letters of the
             original one
